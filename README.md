@@ -2,6 +2,11 @@
 
 Um sistema moderno e elegante para gerenciamento de usuários desenvolvido em Laravel, com interface responsiva e intuitiva.
 
+![image](https://github.com/user-attachments/assets/6b4e86dd-13e5-419c-89d2-0a6259f3ac6e)
+![image](https://github.com/user-attachments/assets/e2c949dc-d9d6-400c-baea-d93a5f8b261a)
+![image](https://github.com/user-attachments/assets/def10b9e-9102-4eca-b6e9-8313a00cfd37)
+
+
 ## 📋 Sobre o Projeto
 
 Este projeto é um sistema de gerenciamento de usuários que permite visualizar, filtrar e gerenciar usuários do sistema. Conta com uma interface moderna desenvolvida com HTML, CSS e JavaScript vanilla, integrada ao backend Laravel.

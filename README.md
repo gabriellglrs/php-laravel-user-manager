@@ -1,61 +1,206 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistema de Gerenciamento de Usuários
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Um sistema moderno e elegante para gerenciamento de usuários desenvolvido em Laravel, com interface responsiva e intuitiva.
 
-## About Laravel
+## 📋 Sobre o Projeto
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Este projeto é um sistema de gerenciamento de usuários que permite visualizar, filtrar e gerenciar usuários do sistema. Conta com uma interface moderna desenvolvida com HTML, CSS e JavaScript vanilla, integrada ao backend Laravel.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Funcionalidades
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Dashboard de Usuários**: Visualização completa dos usuários cadastrados
+- **Estatísticas em Tempo Real**: Cards com métricas importantes (total de usuários, ativos, inativos, novos)
+- **Busca Avançada**: Filtro por nome, email ou telefone
+- **Filtros Dinâmicos**: Filtragem por status e função do usuário
+- **Interface Responsiva**: Design que se adapta a diferentes dispositivos
+- **Animações Suaves**: Transições e efeitos visuais modernos
 
-## Learning Laravel
+## 🛠️ Tecnologias Utilizadas
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Backend**: PHP 8.1+ / Laravel 11
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Banco de Dados**: MySQL/PostgreSQL/SQLite
+- **Estilização**: CSS Grid, Flexbox, Gradientes
+- **Arquitetura**: MVC (Model-View-Controller)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 📁 Estrutura do Projeto
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```
+├── app/
+│   ├── Http/Controllers/
+│   │   └── UsuarioController.php     # Controller principal
+│   └── Models/
+│       ├── User.php                  # Model padrão do Laravel
+│       └── Usuario.php               # Model customizado
+├── database/
+│   └── migrations/
+│       └── 2025_07_09_112956_add_phone_avatar_role_status_to_users_table.php
+├── public/
+│   └── css/
+│       └── usuarios.css              # Estilos da interface
+├── resources/views/
+│   └── usuarios.blade.php            # Template principal
+└── routes/
+    └── web.php                       # Rotas da aplicação
+```
 
-## Laravel Sponsors
+## 🚀 Instalação
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Pré-requisitos
 
-### Premium Partners
+- PHP 8.1 ou superior
+- Composer
+- Node.js (opcional, para assets)
+- MySQL/PostgreSQL/SQLite
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Passos para Instalação
 
-## Contributing
+1. **Clone o repositório**
+```bash
+git clone https://github.com/seu-usuario/sistema-usuarios.git
+cd sistema-usuarios
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2. **Instale as dependências**
+```bash
+composer install
+```
 
-## Code of Conduct
+3. **Configure o ambiente**
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+4. **Configure o banco de dados**
+Edite o arquivo `.env` com suas credenciais:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=seu_banco
+DB_USERNAME=seu_usuario
+DB_PASSWORD=sua_senha
+```
 
-## Security Vulnerabilities
+5. **Execute as migrações**
+```bash
+php artisan migrate
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+6. **Popule o banco com dados de teste (opcional)**
+```bash
+php artisan db:seed
+```
 
-## License
+7. **Inicie o servidor**
+```bash
+php artisan serve
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+8. **Acesse a aplicação**
+```
+http://localhost:8000/usuarios
+```
+
+## 📊 Funcionalidades Detalhadas
+
+### Dashboard de Estatísticas
+- **Total de Usuários**: Conta todos os usuários cadastrados
+- **Usuários Ativos**: Filtra usuários com status ativo
+- **Usuários Inativos**: Filtra usuários com status inativo
+- **Novos Hoje**: Usuários cadastrados nas últimas 24 horas
+
+### Sistema de Filtros
+- **Busca em Tempo Real**: Filtra por nome, email ou telefone
+- **Filtro por Status**: Ativo, Inativo ou Pendente
+- **Filtro por Função**: Administrador, Usuário ou Moderador
+
+### Interface Responsiva
+- Design adaptável para desktop, tablet e mobile
+- Tabela com scroll horizontal em dispositivos menores
+- Cards de estatísticas em grid responsivo
+
+## 🎨 Características do Design
+
+- **Tema Moderno**: Gradientes e efeitos de glassmorphism
+- **Paleta de Cores**: Tons de azul e roxo com contraste adequado
+- **Tipografia**: Segoe UI para melhor legibilidade
+- **Animações**: Transições suaves e efeitos hover
+- **Acessibilidade**: Contraste adequado e navegação por teclado
+
+## 📝 Estrutura do Banco de Dados
+
+### Tabela `users`
+```sql
+- id (bigint, primary key)
+- name (varchar)
+- email (varchar, unique)
+- email_verified_at (timestamp)
+- password (varchar)
+- phone (varchar, nullable)
+- avatar (varchar, nullable)
+- role (varchar, default: 'user')
+- status (boolean, default: 1)
+- remember_token (varchar)
+- created_at (timestamp)
+- updated_at (timestamp)
+```
+
+## 🔧 Configurações Personalizadas
+
+### Model Usuario
+O projeto utiliza um model customizado `Usuario` que aponta para a tabela `users`, permitindo maior flexibilidade na manipulação dos dados.
+
+### Controller UsuarioController
+Centraliza a lógica de negócio para:
+- Listagem de usuários
+- Cálculo de estatísticas
+- Filtragem de dados
+
+## 📱 Responsividade
+
+O sistema foi desenvolvido com abordagem mobile-first:
+- **Desktop**: Layout completo com todas as funcionalidades
+- **Tablet**: Adaptação dos elementos para telas médias
+- **Mobile**: Interface otimizada para dispositivos móveis
+
+## 🚧 Funcionalidades Futuras
+
+- [ ] Sistema de autenticação
+- [ ] CRUD completo de usuários
+- [ ] Upload de avatar
+- [ ] Exportação de dados
+- [ ] Notificações em tempo real
+- [ ] Sistema de permissões
+- [ ] API REST
+- [ ] Testes automatizados
+
+## 🤝 Contribuindo
+
+1. Faça o fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
+## 📧 Contato
+
+Seu Nome - [seu.email@example.com](mailto:seu.email@example.com)
+
+Link do Projeto: [https://github.com/seu-usuario/sistema-usuarios](https://github.com/seu-usuario/sistema-usuarios)
+
+## 🙏 Agradecimentos
+
+- Laravel Framework
+- Comunidade PHP
+- Unsplash pelas imagens de avatar
+- Contribuidores do projeto
+
+---
+
+**Desenvolvido com ❤️ usando Laravel**

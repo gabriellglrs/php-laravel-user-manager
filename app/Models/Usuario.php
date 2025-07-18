@@ -16,6 +16,7 @@ class Usuario extends Model
         'name',
         'email',
         'password',
+        'avatar',
         'phone',
         'role', // ex: 'admin', 'user', etc.
         'status', // ex: 'active', 'inactive'

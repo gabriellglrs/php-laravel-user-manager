@@ -80,7 +80,7 @@
                             <tr>
                                 <td>
                                     <div class="user-info">
-                                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+                                        <img src={{ $u->avatar }}
                                             alt="Avatar" class="user-avatar">
                                         <div class="user-details">
                                             <h4>{{ $u->name }}</h4>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/usuarios.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/usuarios/index.css') }}">
     <title>Gerenciamento de Usuários - Laravel</title>
 
 </head>
@@ -55,7 +55,7 @@
                     <option value="moderator">Moderador</option>
                 </select>
             </div>
-            <a href="#" class="btn btn-primary">
+            <a href="{{ route('usuarios.create') }}" class="btn btn-primary">
                 <span>+</span> Novo Usuário
             </a>
         </div>

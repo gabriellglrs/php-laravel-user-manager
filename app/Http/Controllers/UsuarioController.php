@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
-    public function index() // Exibe a lista de usuários
+    // Exibe a lista de usuários
+    public function index()
     {
         $users = Usuario::all(); // busca todos os produtos do banco
 
@@ -23,12 +24,14 @@ class UsuarioController extends Controller
         return view('usuarios.index', compact('users', 'totalUsuarios', 'usuariosAtivos', 'usuariosInativos', 'novosUsuarios')); // retorna a view 'usuarios' com os dados dos usuários
     }
 
-    public function create() // Exibe o formulário para criar um novo usuário
+    // Exibe o formulário de criação de usuário
+    public function create()
     {
         return view('usuarios.create'); // retorna a view 'usuarios.create' para o formulário de criação de usuário
     }
 
-    public function store(Request $request) // Armazena um novo usuário
+    // Armazena um novo usuário
+    public function store(Request $request)
     {
         // Validação
         $request->validate([
@@ -52,4 +55,45 @@ class UsuarioController extends Controller
 
         return redirect()->route('usuarios.index')->with('success', 'Usuário cadastrado com sucesso!');
     }
+
+    // Exibe o formulário de edição
+    public function edit($id)
+    {
+        $user = Usuario::findOrFail($id);
+        return view('usuarios.edit', compact('user'));
+    }
+
+    // Atualiza os dados do usuário
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $id,
+            'phone' => 'nullable|string',
+            'role' => 'required|string',
+            'status' => 'required|boolean',
+        ]);
+
+        $user = Usuario::findOrFail($id);
+
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'role' => $request->role,
+            'status' => $request->status,
+        ]);
+
+        return redirect()->route('usuarios.index')->with('success', 'Usuário atualizado com sucesso!');
+    }
+
+    // Remove o usuário do banco
+    public function destroy($id)
+    {
+        $user = Usuario::findOrFail($id);
+        $user->delete();
+
+        return redirect()->route('usuarios.index')->with('success', 'Usuário excluído com sucesso!');
+    }
+
 }

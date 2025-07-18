@@ -1,20 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@extends('layouts.app')
+
+@section('title', 'Usuários')
+
+@push('styles')
     <link rel="stylesheet" href="{{ asset('css/usuarios/index.css') }}">
-    <title>Gerenciamento de Usuários - Laravel</title>
+@endpush
 
-</head>
+@section('content')
+    {{-- aqui vai TODO o conteúdo que já está dentro do <body> na sua versão atual --}}
+    {{-- Copie e cole o conteúdo entre <body> e </body> aqui --}}
 
-<body>
     <div class="container">
         <!-- Header -->
         <div class="header">
             <h1>Gerenciamento de Usuários</h1>
-            <p>Gerencie todos os usuários do sistema de forma eficiente</p>
+
         </div>
 
         <!-- Statistics -->
@@ -41,7 +42,7 @@
         <div class="controls">
             <div class="search-container">
                 <input type="text" class="search-input" placeholder="Buscar usuários por nome, email ou telefone..."
-                    id="searchInput">
+                       id="searchInput">
                 <select class="filter-select" id="statusFilter">
                     <option value="">Todos os Status</option>
                     <option value="active">Ativo</option>
@@ -65,48 +66,54 @@
             <div class="table-wrapper">
                 <table id="usersTable">
                     <thead>
-                        <tr>
-                            <th>Usuário</th>
-                            <th>Email</th>
-                            <th>Telefone</th>
-                            <th>Função</th>
-                            <th>Status</th>
-                            <th>Cadastrado em</th>
-                            <th>Ações</th>
-                        </tr>
+                    <tr>
+                        <th>Usuário</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Função</th>
+                        <th>Status</th>
+                        <th>Cadastrado em</th>
+                        <th>Ações</th>
+                    </tr>
                     </thead>
                     <tbody>
-                        @foreach ($users as $u)
-                            <tr>
-                                <td>
-                                    <div class="user-info">
-                                        <img src={{ $u->avatar }}
+                    @foreach ($users as $u)
+                        <tr>
+                            <td>
+                                <div class="user-info">
+                                    <img src={{ $u->avatar }}
                                             alt="Avatar" class="user-avatar">
-                                        <div class="user-details">
-                                            <h4>{{ $u->name }}</h4>
-                                            <p>ID: #{{ $u->id }}</p>
-                                        </div>
+                                    <div class="user-details">
+                                        <h4>{{ $u->name }}</h4>
+                                        <p>ID: #{{ $u->id }}</p>
                                     </div>
-                                </td>
-                                <td>{{ $u->email }}</td>
-                                <td>{{ $u->phone }}</td>
-                                <td>{{ $u->role }}</td>
-                                <td>
-                                    @if ($u->status == 1)
-                                        <span class="status-badge status-active">Ativo</span>
-                                    @elseif ($u->status == 0)
-                                        <span class="status-badge status-inactive">Inativo</span>
-                                    @endif
-                                </td>
-                                <td>{{ $u->created_at }}</td>
-                                <td>
-                                    <div class="actions">
-                                        <a href="#" class="btn btn-secondary btn-sm">Editar</a>
-                                        <a href="#" class="btn btn-danger btn-sm">Excluir</a>
-                                    </div>
-                                </td>
-                            </tr>
-                        @endforeach
+                                </div>
+                            </td>
+                            <td>{{ $u->email }}</td>
+                            <td>{{ $u->phone }}</td>
+                            <td>{{ $u->role }}</td>
+                            <td>
+                                @if ($u->status == 1)
+                                    <span class="status-badge status-active">Ativo</span>
+                                @elseif ($u->status == 0)
+                                    <span class="status-badge status-inactive">Inativo</span>
+                                @endif
+                            </td>
+                            <td>{{ $u->created_at }}</td>
+                            <td>
+                                <div class="actions">
+                                    <a href="{{ route('usuarios.edit', $u->id) }}" class="btn btn-secondary btn-sm">Editar</a>
+
+                                    <form action="{{ route('usuarios.destroy', $u->id) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Deseja realmente excluir?')">Excluir</button>
+                                    </form>
+                                </div>
+                            </td>
+
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
@@ -196,6 +203,4 @@
             });
         });
     </script>
-</body>
-
-</html>
+@endsection

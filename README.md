@@ -2,10 +2,10 @@
 
 Um sistema moderno e elegante para gerenciamento de usuários desenvolvido em Laravel, com interface responsiva e intuitiva.
 
-![image](https://github.com/user-attachments/assets/6b4e86dd-13e5-419c-89d2-0a6259f3ac6e)
-![image](https://github.com/user-attachments/assets/e2c949dc-d9d6-400c-baea-d93a5f8b261a)
-![image](https://github.com/user-attachments/assets/def10b9e-9102-4eca-b6e9-8313a00cfd37)
-
+<img width="1342" height="431" alt="image" src="https://github.com/user-attachments/assets/df39556d-cc5d-4bff-ac96-1fbc717ddb4b" />
+<img width="1341" height="589" alt="image" src="https://github.com/user-attachments/assets/75a51ff3-642e-4447-b74d-dd87374472cc" />
+<img width="1342" height="328" alt="image" src="https://github.com/user-attachments/assets/2371c8c8-b1f4-48c0-a6e3-8b3f489f10b1" />
+<img width="1346" height="643" alt="image" src="https://github.com/user-attachments/assets/96275c1e-c4d9-40d1-9287-bd8b9d84f7e5" />
 
 ## 📋 Sobre o Projeto
 

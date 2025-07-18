@@ -15,7 +15,7 @@
         <!-- Header -->
         <div class="header">
             <h1>Gerenciamento de Usuários</h1>
-
+            <p>Gerencie todos os usuários do sistema de forma eficiente</p>
         </div>
 
         <!-- Statistics -->

@@ -10,7 +10,6 @@
 <body>
 <header class="header">
     <h1>Sistema de Gerenciamento</h1>
-    <p>Gerencie todos os usuários do sistema de forma eficiente</p>
 </header>
 
 <main class="container">

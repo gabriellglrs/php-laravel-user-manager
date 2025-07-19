@@ -1,3 +1,8 @@
+<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=4C89F8&height=120&section=header"/>
+
+<img width="1584" height="396" alt="LinkedIn cover - 29" src="https://github.com/user-attachments/assets/d1c05723-0bec-4ce7-8dee-1ef8c95ebf3e" />
+
+
 # Sistema de Gerenciamento de Usuários
 
 Um sistema moderno e elegante para gerenciamento de usuários desenvolvido em Laravel, com interface responsiva e intuitiva.
@@ -209,3 +214,12 @@ Link do Projeto: [https://github.com/seu-usuario/sistema-usuarios](https://githu
 ---
 
 **Desenvolvido com ❤️ usando Laravel**
+
+ <br>
+
+ <br>
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/ed7208b8-6bdc-4c82-98aa-8c8cb9c1428f" height="150"/>
+</div>
+
+<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=4C89F8&height=120&section=footer"/>
